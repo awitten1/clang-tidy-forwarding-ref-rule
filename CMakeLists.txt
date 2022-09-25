@@ -22,5 +22,6 @@ set(CMAKE_CXX_STANDARD 17)
 
 # Now build our tools
 add_subdirectory(lib)
+add_subdirectory(example)
 
 

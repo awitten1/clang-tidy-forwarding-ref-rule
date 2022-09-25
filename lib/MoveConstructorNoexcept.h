@@ -1,12 +1,16 @@
 
 #pragma once
 
-#include "clang/ASTMatchers/ASTMatchFinder.h"
 #include <iostream>
 
 #include <clang-tidy/ClangTidyCheck.h>
 #include <clang-tidy/ClangTidyModule.h>
 #include <clang-tidy/ClangTidyModuleRegistry.h>
+#include <clang/AST/Decl.h>
+#include <clang/AST/DeclCXX.h>
+#include <clang/ASTMatchers/ASTMatchFinder.h>
+#include <clang/ASTMatchers/ASTMatchers.h>
+#include <clang/ASTMatchers/ASTMatchersInternal.h>
 
 class MatchCallbackImpl
     : public clang::ast_matchers::MatchFinder::MatchCallback {
@@ -15,6 +19,8 @@ class MatchCallbackImpl
     std::cout << "Found a match" << std::endl;
   }
 };
+
+namespace MyNameSpace {}
 
 template <typename T>
 class Matcher
